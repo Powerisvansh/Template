@@ -1,94 +1,74 @@
-# 🌟 3D Landing Page Template
+# My Portfolio Website - Overview 🚀
 
-A modern, performance-focused template for creating stunning 3D landing pages using React, Three.js, and GSAP.
+This repository contains the open source version of my 3D portfolio website. Do check it out!
 
-## ✨ Features
+## Instructions 🛠️
 
-- **🎯 Single Page Focus** - Clean, focused 3D landing page
-- **🎨 3D Interactions** - Scroll-based 3D animations and scenes
-- **⚡ Performance Optimized** - Efficient 3D rendering and animations
-- **📱 Responsive Design** - Works beautifully on all devices
-- **🌙 Dark/Light Theme** - Built-in theme switching
-- **🎭 GSAP Animations** - Smooth, professional animations
-- **🔧 TypeScript** - Full type safety
-- **🎨 Tailwind CSS** - Utility-first styling
+I have modified the GSAP club plugins with the trial plugins, but with the trial plugin, you cannot host it⛔️. For Club plugins, check out here: [GSAP Installation](https://gsap.com/docs/v3/Installation/).
 
-## 🏗️ What's Included
+**Techstack** - React, TypeScript, GSAP, ThreeJS, WebGL, HTML, CSS, JavaScript
 
-### Core Components
-- **HomePage** - Main landing page with 3D sections
-- **LandingHero** - Hero section with 3D background
-- **ScrollScene** - Scroll-triggered 3D animations
-- **AdvancedScene** - Interactive 3D scenes
-- **MinimalLayout** - Clean navigation layout
+### Installation
 
-### 3D Features
-- Three.js integration with React Three Fiber
-- GSAP scroll animations
-- Interactive 3D models
-- Performance-optimized rendering
-- Responsive 3D scenes
+1. Clone the repository to your local machine:
 
-### Developer Experience
-- TypeScript for type safety
-- ESLint + Prettier for code quality
-- Hot reload development
-- Production-ready build
+   ```bash
+   git clone <repository-url>
+   cd <repository-directory>
+   ```
 
-## 🚀 Quick Start
+2. Install the required packages:
 
-```bash
-# Install dependencies
-npm install
+   ```bash
+   npm install
+   ```
 
-# Start development server
-npm run dev
+3. Install React:
 
-# Build for production
-npm run build
-```
+   ```bash
+   npm i react
+   ```
 
-## 📁 Project Structure
+4. Install GSAP for React:
 
-```
-src/
-├── components/
-│   ├── 3d/           # 3D components and scenes
-│   ├── layout/       # Layout components
-│   └── sections/     # Page sections
-├── hooks/            # Custom React hooks
-├── context/          # React context (theme, etc.)
-├── types/            # TypeScript type definitions
-├── utils/            # Utility functions
-├── styles/           # Global styles
-└── pages/
-    └── HomePage.tsx  # Main landing page
-```
+   You can choose to install GSAP specifically for React or the general GSAP package:
 
-## 🎨 Customization
+   For React:
+   ```bash
+   npm i gsap/react
+   ```
 
-This template is designed to be easily customizable:
+   Or the general GSAP package:
+   ```bash
+   npm i gsap
+   ```
 
-1. **3D Models** - Replace models in `/public/models/`
-2. **Styling** - Modify Tailwind classes or global CSS
-3. **Animations** - Adjust GSAP animations in 3D components
-4. **Content** - Update text and sections in `HomePage.tsx`
-5. **Theme** - Customize colors in theme context
+5. Run the development server:
 
-## 🔧 Technologies
+   ```bash
+   npm run dev
+   ```
 
-- **React 18** - Modern React with hooks
-- **TypeScript** - Type-safe development
-- **Three.js** - 3D graphics library
-- **React Three Fiber** - React renderer for Three.js
-- **GSAP** - Professional animations
-- **Tailwind CSS** - Utility-first CSS
-- **Vite** - Fast build tool
+Open your browser and navigate to `http://localhost:3000` to view the website.
 
-## 📝 License
+## Features
 
-MIT License - feel free to use for personal and commercial projects.
+- 3D interactive UI built with ThreeJS and WebGL
+- Smooth animations using GSAP
+- Responsive design for various screen sizes
 
----
+## Contributing
 
-**Perfect for:** Portfolio sites, product showcases, creative agencies, and any project that needs stunning 3D visuals.
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Commit your changes (`git commit -m 'Add new feature'`).
+4. Push to the branch (`git push origin feature-branch`).
+5. Open a pull request.
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
+ 
+
