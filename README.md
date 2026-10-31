@@ -1,61 +1,88 @@
-# What is 3d-portfolio?
+# Stellar Portfolio 🚀
 
-It is a highly customizable dev portfolio template that features astonishing 3D graphics by taking advantage of webGL.
+A modern, animated portfolio template featuring 3D starfield background, dramatic typography, and smooth scrolling animations. Built with Three.js and GSAP.
 
-It is built using [threejs](https://github.com/mrdoob/three.js), [react-three-fiber](https://github.com/pmndrs/react-three-fiber), and [@react-three/drei](https://github.com/pmndrs/drei).
+![Preview](./preview/screenshot.png)
 
-Created by Tomas Gonzalez.
+## ✨ Features
 
-# Example: 
-https://tomasgonzalez.github.io/3d-portfolio/
+- Interactive 3D starfield background
+- Responsive design
+- Smooth scroll animations
+- Gradient text animations
+- Modern glass-morphism cards
+- Project showcase section
+- Contact form
+- Stats & skills display
 
-https://user-images.githubusercontent.com/26396804/193622132-c7e12305-3cbf-4c4c-8992-2f58104a5068.mp4
+## 🛠️ Technologies
 
+- Three.js
+- GSAP
+- HTML5
+- CSS3
+- JavaScript
 
-# Get started!
+## 🚀 Quick Start
 
-## First
+1. Clone the repository:
+```bash
+git clone https://github.com/ddosnotification/stellar-portfolio-template.git
+```
 
-Start by `forking` this repository, then clone your forked copy and navigate to the root directory.
+2. Open `index.html` in your browser
 
-## Install the dependencies with: 
+3. Customize the content in `index.html` or `/css/style.css` or `/js/script.js`
 
-### `yarn`
+## 🎨 Customization
 
-## Then start the development server with:
+### Colors
+Edit the gradient colors in the CSS variables:
+```css
+background: linear-gradient(to right, #00eeff, #00ff88, #00eeff);
+```
 
-### `yarn start`
+### Content
+Replace the placeholder text in `index.html`:
+- Name and title in the hero section
+- Project details in the work section
+- Stats and skills in the about section
 
-This runs the app in the development mode.
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Background
+Modify the starfield parameters in the JavaScript section:
+```javascript
+const starPositions = [];
+for(let i = 0; i < 10000; i++) {
+    // Adjust star count and position range
+}
+```
 
-The page will reload when you make changes.
-You may also see any lint errors in the console.
+## 📱 Browser Support
 
-## Modify the template to your taste.
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
 
-There is no coding required to configure the pages of the portfolio. 
-All the settings that you will ever need to touch are set inside the 
+## 📄 License
 
-`src/configs.js`, `./constants/pageData.js`, and `src/theme.js`
+MIT License - feel free to use for your portfolio!
 
-## Video tutorial:
+## 🤝 Contributing
 
-https://youtu.be/fC7e2ONfhUc
+1. Fork the repository
+2. Create a feature branch
+3. Commit changes
+4. Push to branch
+5. Open pull request
 
-## Deploy to github pages
+## ⭐ Show Your Support
 
-First make sure to create a `gh-pages` branch.
+Give a ⭐️ if you like this project!
 
-After pushing the branch to GitHub, head over to the `Settings` page of the repository and select in the `GitHub Pages` section the `gh-pages` branch as source.
+## 📧 Contact
 
-After that run:
+Questions? Feel free to open an issue or reach out to [me](https://x.com/ddosntfcion)
 
-### `yarn deploy`
-
-And thats It! It will automatically deploy to `https://{username}.github.io/{repo-name}`
-
-# More info
-
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/tomasgonzalez)
-
+---
+Created with 💙 by ddosnotification
