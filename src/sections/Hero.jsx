@@ -1,77 +1,63 @@
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-
-import AnimatedCounter from "../components/AnimatedCounter";
-import Button from "../components/Button";
-import { words } from "../constants";
-import HeroExperience from "../components/models/hero_models/HeroExperience";
-
+import { Canvas } from "@react-three/fiber";
+import { Planet } from "../components/Planet";
+import { Environment, Float, Lightformer } from "@react-three/drei";
+import { useMediaQuery } from "react-responsive";
+import AnimatedHeaderSection from "../components/AnimatedHeaderSection";
 const Hero = () => {
-  useGSAP(() => {
-    gsap.fromTo(
-      ".hero-text h1",
-      { y: 50, opacity: 0 },
-      { y: 0, opacity: 1, stagger: 0.2, duration: 1, ease: "power2.inOut" }
-    );
-  });
-
+  const isMobile = useMediaQuery({ maxWidth: 853 });
+  const text = `I help growing brands and startups gain an
+unfair advantage through premium
+results driven webs/apps`;
   return (
-    <section id="hero" className="relative overflow-hidden">
-      <div className="absolute top-0 left-0 z-10">
-        <img src="/images/bg.png" alt="" />
-      </div>
-
-      <div className="hero-layout">
-        {/* LEFT: Hero Content */}
-        <header className="flex flex-col justify-center md:w-full w-screen md:px-20 px-5">
-          <div className="flex flex-col gap-7">
-            <div className="hero-text">
-              <h1>
-                Shaping
-                <span className="slide">
-                  <span className="wrapper">
-                    {words.map((word, index) => (
-                      <span
-                        key={index}
-                        className="flex items-center md:gap-3 gap-1 pb-2"
-                      >
-                        <img
-                          src={word.imgPath}
-                          alt="person"
-                          className="xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-white-50"
-                        />
-                        <span>{word.text}</span>
-                      </span>
-                    ))}
-                  </span>
-                </span>
-              </h1>
-              <h1>into Real Projects</h1>
-              <h1>that Deliver Results</h1>
-            </div>
-
-            <p className="text-white-50 md:text-xl relative z-10 pointer-events-none">
-              Hi, I’m Adrian, a developer based in Croatia with a passion for
-              code.
-            </p>
-
-            <Button
-              text="See My Work"
-              className="md:w-80 md:h-16 w-60 h-12"
-              id="counter"
-            />
-          </div>
-        </header>
-
-        {/* RIGHT: 3D Model or Visual */}
-        <figure>
-          <div className="hero-3d-layout">
-            <HeroExperience />
-          </div>
-        </figure>
-      </div>
-
-      <AnimatedCounter />
+    <section id="home" className="flex flex-col justify-end min-h-screen">
+      <AnimatedHeaderSection
+        subTitle={"404 No Bugs Found"}
+        title={"Ali Sanati"}
+        text={text}
+        textColor={"text-black"}
+      />
+      <figure
+        className="absolute inset-0 -z-50"
+        style={{ width: "100vw", height: "100vh" }}
+      >
+        <Canvas
+          shadows
+          camera={{ position: [0, 0, -10], fov: 17.5, near: 1, far: 20 }}
+        >
+          <ambientLight intensity={0.5} />
+          <Float speed={0.5}>
+            <Planet scale={isMobile ? 0.7 : 1} />
+          </Float>
+          <Environment resolution={256}>
+            <group rotation={[-Math.PI / 3, 4, 1]}>
+              <Lightformer
+                form={"circle"}
+                intensity={2}
+                position={[0, 5, -9]}
+                scale={10}
+              />
+              <Lightformer
+                form={"circle"}
+                intensity={2}
+                position={[0, 3, 1]}
+                scale={10}
+              />
+              <Lightformer
+                form={"circle"}
+                intensity={2}
+                position={[-5, -1, -1]}
+                scale={10}
+              />
+              <Lightformer
+                form={"circle"}
+                intensity={2}
+                position={[10, 1, 0]}
+                scale={16}
+              />
+            </group>
+          </Environment>
+        </Canvas>
+      </figure>
     </section>
   );
 };

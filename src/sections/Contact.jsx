@@ -1,119 +1,82 @@
-import { useRef, useState } from "react";
-import emailjs from "@emailjs/browser";
-
-import TitleHeader from "../components/TitleHeader";
-import ContactExperience from "../components/models/contact/ContactExperience";
+import { useGSAP } from "@gsap/react";
+import AnimatedHeaderSection from "../components/AnimatedHeaderSection";
+import Marquee from "../components/Marquee";
+import { socials } from "../constants";
+import gsap from "gsap";
 
 const Contact = () => {
-  const formRef = useRef(null);
-  const [loading, setLoading] = useState(false);
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setForm({ ...form, [name]: value });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true); // Show loading state
-
-    try {
-      await emailjs.sendForm(
-        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
-        formRef.current,
-        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
-      );
-
-      // Reset form and stop loading
-      setForm({ name: "", email: "", message: "" });
-    } catch (error) {
-      console.error("EmailJS Error:", error); // Optional: show toast
-    } finally {
-      setLoading(false); // Always stop loading, even on error
-    }
-  };
-
+  const text = `Got a question, how or project Idea?
+    WE’D love to hear from you and discus further!`;
+  const items = [
+    "just imagin, I code",
+    "just imagin, I code",
+    "just imagin, I code",
+    "just imagin, I code",
+    "just imagin, I code",
+  ];
+  useGSAP(() => {
+    gsap.from(".social-link", {
+      y: 100,
+      opacity: 0,
+      delay: 0.5,
+      duration: 1,
+      stagger: 0.3,
+      ease: "back.out",
+      scrollTrigger: {
+        trigger: ".social-link",
+      },
+    });
+  }, []);
   return (
-    <section id="contact" className="flex-center section-padding">
-      <div className="w-full h-full md:px-10 px-5">
-        <TitleHeader
-          title="Get in Touch – Let’s Connect"
-          sub="💬 Have questions or ideas? Let’s talk! 🚀"
+    <section
+      id="contact"
+      className="flex flex-col justify-between min-h-screen bg-black"
+    >
+      <div>
+        <AnimatedHeaderSection
+          subTitle={"You Dream It, I Code it"}
+          title={"Contact"}
+          text={text}
+          textColor={"text-white"}
+          withScrollTrigger={true}
         />
-        <div className="grid-12-cols mt-16">
-          <div className="xl:col-span-5">
-            <div className="flex-center card-border rounded-xl p-10">
-              <form
-                ref={formRef}
-                onSubmit={handleSubmit}
-                className="w-full flex flex-col gap-7"
-              >
-                <div>
-                  <label htmlFor="name">Your name</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={form.name}
-                    onChange={handleChange}
-                    placeholder="What’s your good name?"
-                    required
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="email">Your Email</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={form.email}
-                    onChange={handleChange}
-                    placeholder="What’s your email address?"
-                    required
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="message">Your Message</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={form.message}
-                    onChange={handleChange}
-                    placeholder="How can I help you?"
-                    rows="5"
-                    required
-                  />
-                </div>
-
-                <button type="submit">
-                  <div className="cta-button group">
-                    <div className="bg-circle" />
-                    <p className="text">
-                      {loading ? "Sending..." : "Send Message"}
-                    </p>
-                    <div className="arrow-wrapper">
-                      <img src="/images/arrow-down.svg" alt="arrow" />
-                    </div>
-                  </div>
-                </button>
-              </form>
+        <div className="flex px-10 font-light text-white uppercase lg:text-[32px] text-[26px] leading-none mb-10">
+          <div className="flex flex-col w-full gap-10">
+            <div className="social-link">
+              <h2>E-mail</h2>
+              <div className="w-full h-px my-2 bg-white/30" />
+              <p className="text-xl tracking-wider lowercase md:text-2xl lg:text-3xl">
+                JohnDoe@gmail.com
+              </p>
             </div>
-          </div>
-          <div className="xl:col-span-7 min-h-96">
-            <div className="bg-[#cd7c2e] w-full h-full hover:cursor-grab rounded-3xl overflow-hidden">
-              <ContactExperience />
+            <div className="social-link">
+              <h2>Phone</h2>
+              <div className="w-full h-px my-2 bg-white/30" />
+              <p className="text-xl lowercase md:text-2xl lg:text-3xl">
+                +33 7 12 12 32 12
+              </p>
+            </div>
+            <div className="social-link">
+              <h2>Social Media</h2>
+              <div className="w-full h-px my-2 bg-white/30" />
+              <div className="flex flex-wrap gap-2">
+                {socials.map((social, index) => (
+                  <a
+                    key={index}
+                    href={social.href}
+                    className="text-xs leading-loose tracking-wides uppercase md:text-sm hover:text-white/80 transition-colors duration-200"
+                  >
+                    {"{ "}
+                    {social.name}
+                    {" }"}
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <Marquee items={items} className="text-white bg-transparent" />
     </section>
   );
 };
