@@ -1,44 +1,39 @@
 {
-  "name": "threejs-gsap-webgi-course",
-  "version": "1.0.0",
-  "description": "WebGi + TypeScript example starter project",
-  "main": "index.html",
-  "author": {
-    "name": "Anderson Mancini",
-    "email": "andersonmancini30@gmail.com",
-    "url": "https://twitter.com/Andersonmancini/"
-  },
+  "name": "3d-vite-react-ts",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "start": "parcel index.html",
-    "build": "parcel build index.html --no-minify --public-url ./",
-    "deploy": "vercel --prod"
-  },
-  "devDependencies": {
-    "@types/three": "^0.139.0",
-    "@types/webgi": "https://storage.googleapis.com/dist.pixotronics.com/webgi/runtime/bundle-types-0.5.5.tgz",
-    "parcel-bundler": "^1.6.1",
-    "parcel-plugin-static-files-copy": "^2.6.0",
-    "typescript": "4.4.4",
-    "webgi": "https://storage.googleapis.com/dist.pixotronics.com/webgi/runtime/bundle-0.5.5.tgz"
-  },
-  "resolutions": {
-    "@babel/preset-env": "7.13.8"
-  },
-  "keywords": [
-    "typescript",
-    "javascript"
-  ],
-  "staticFiles": {
-    "staticPath": [
-      {
-        "staticPath": "assets",
-        "staticOutDir": "assets"
-      }
-    ]
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@studio-freight/lenis": "^0.2.28",
-    "gsap": "^3.11.1",
-    "vercel": "^28.4.5"
+    "@react-three/drei": "^9.92.7",
+    "@react-three/fiber": "^8.15.19",
+    "@types/three": "^0.162.0",
+    "gsap": "^3.12.7",
+    "lucide-react": "^0.344.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "three": "^0.159.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.9.1",
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.18",
+    "eslint": "^9.9.1",
+    "eslint-plugin-react-hooks": "^5.1.0-rc.0",
+    "eslint-plugin-react-refresh": "^0.4.11",
+    "globals": "^15.9.0",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.5.3",
+    "typescript-eslint": "^8.3.0",
+    "vite": "^6.3.5"
   }
 }

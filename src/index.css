@@ -1,53 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: black;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+        background-color: #0f172a;
+        color: white;
+    overflow-x: hidden;
 }
 
-.ReactModal__Overlay {
-  opacity: 0;
-  transition: opacity 500ms ease-in-out;
+#root {
+    width: 100%;
+        min-height: 100vh;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #1e293b;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #6366f1;
+        border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #4f46e5;
+    }
 }
 
-.ReactModal__Overlay--after-open {
-  opacity: 1;
+@layer components {
+    .split-char {
+        display: inline-block;
+    }
+
+    .hero-header-word {
+        display: block;
+        overflow: hidden;
+    }
+
+    .text-side-heading {
+        overflow: hidden;
+    }
+
+    .model-info {
+        transition: all 0.3s ease;
+    }
+
+    .carousel-background {
+        transition: background-color 1s ease;
+    }
+
+    .scroll-text {
+        transition: all 0.5s ease;
+    }
+
+    .contact-content {
+        transition: all 0.8s ease;
 }
 
-.ReactModal__Overlay--before-close {
-  opacity: 0;
+/* WebGL Canvas styles */
+canvas {
+    display: block;
+    outline: none;
 }
 
-.example-enter {
-  opacity: 0.01;
+/* Loading and error states */
+.loading-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
 }
 
-.example-enter.example-enter-active {
-  opacity: 1;
-  transition: opacity 500ms ease-in;
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+        }
+    }
 }
 
-.example-leave {
-  opacity: 1;
+@layer utilities {
+    .text-balance {
+        text-wrap: balance;
+    }
 }
 
-.example-leave.example-leave-active {
-  opacity: 0.01;
-  transition: opacity 300ms ease-in;
-}
-.example-appear {
-  opacity: 0.01;
-}
-
-.example-appear.example-appear-active {
-  opacity: 1;
-  transition: opacity .5s ease-in;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
 }
