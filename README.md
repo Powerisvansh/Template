@@ -1,95 +1,61 @@
-# 🎨 ITom Dev | Interactive 3D WebGL Portfolio
+# What is 3d-portfolio?
 
-<div align="center">
-  <img src="https://img.shields.io/badge/React-19-blue?style=for-the-badge&logo=react" alt="React" />
-  <img src="https://img.shields.io/badge/Three.js-0.182-black?style=for-the-badge&logo=threedotjs" alt="Three.js" />
-  <img src="https://img.shields.io/badge/R3F-9.4-purple?style=for-the-badge&logo=react" alt="React Three Fiber" />
-  <img src="https://img.shields.io/badge/GSAP-3.14-green?style=for-the-badge&logo=greensock" alt="GSAP" />
-  <img src="https://img.shields.io/badge/Vite-7.2-646CFF?style=for-the-badge&logo=vite" alt="Vite" />
-</div>
+It is a highly customizable dev portfolio template that features astonishing 3D graphics by taking advantage of webGL.
 
-<br/>
+It is built using [threejs](https://github.com/mrdoob/three.js), [react-three-fiber](https://github.com/pmndrs/react-three-fiber), and [@react-three/drei](https://github.com/pmndrs/drei).
 
-Welcome to the open-source repository of **Tomasz "ITom" Szmajda's** interactive 3D Web Developer portfolio. This project pushes the limits of modern web technologies by blending spatial WebGL computing, complex React ecosystems, and highly optimized frontend engineering.
+Created by Tomas Gonzalez.
 
-> [!NOTE]
-> Ensure hardware acceleration is enabled in your browser settings to experience the smooth 60 FPS high-tier rendering of this application.
+# Example: 
+https://tomasgonzalez.github.io/3d-portfolio/
 
-## 🚀 Key Performance Architectures (2026 Standards)
-
-This application is strictly optimized for cross-device operability, achieving zero lag spikes even on mobile processors through several bespoke architectural implementations:
-
-1. **Invisible Semantic SEO Fallback:** Bypasses WebGL canvas SEO limitations via strategic `sr-only-seo` indexing DOM injections, rendering fully visible semantic trees to native search-engine crawlers without mounting heavy bundles.
-2. **Asynchronous Shader Compilation:** Enforces `gl.compileAsync` during the Preloading phase inside a hidden `RoomWarmup` Suspense boundary. This allows Three.js to pre-compile complex materials asynchronously without blocking the main React update thread.
-3. **Baked Global Tinting & Lighing Extraction:** Replaced real-time WebGL shadow maps and infinite light rays with baked-in global textures (`apply_global_tint.js`), dropping the GPU compute overhead entirely while maintaining visual depth.
-4. **DOM Mutation Bypassing:** Critical animation properties (like SVG preloader states tracking 130+ concurrent HTTP texture requests) write directly to the `ref.current.style`, intentionally bypassing React’s `setState` render cycles to conserve CPU.
-5. **Adaptive Device Tiering:** Auto-detects `navigator.deviceMemory`, hardware concurrency, and viewport sizes to scale WebGL resolutions (`dpr`), antialiasing algorithms, and texture loading strictness on the fly.
-
----
-
-## 🏗️ 3D Scene Architecture
-
-```mermaid
-graph TD;
-    A[App.jsx] --> B[SceneProvider Context];
-    A --> C[canvas];
-    A --> D[2D DOM / SEO / HUD];
-    
-    C --> E[Experience.jsx];
-    E --> F[RoomWarmup Pre-compiler];
-    E --> G[Infinite Corridor Manager];
-    
-    G --> H[Gallery Room];
-    G --> I[Studio Room];
-    G --> J[Contact Room];
-    G --> K[About Room];
-    
-    H -.-> L{useTexture & useGLTF};
-    L -.-> M(GPU Memory);
-```
-
----
-
-## 🛠️ Local Development Setup
-
-To run this application natively on your local machine:
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/ITomPoland/portfolio-itom.git
-   cd portfolio-itom
-   ```
-
-2. **Install dependencies:**
-   Make sure you are on Node.js v20+.
-   ```bash
-   npm install
-   ```
-
-3. **Start the local Dev Server:**
-   ```bash
-   npm run dev
-   ```
-
-> [!IMPORTANT]
-> Since this project heavily utilizes `vite-plugin-compression` and hundreds of high-res textures, your initial local load might take a few seconds as the dev-server buffers asset delivery. For performance testing, always run `npm run build && npm run preview`.
-
-## 🤝 Contributing & Feedback
-
-All PRs improving the shader physics, 3D math logic, or component memoization runtimes are welcome. Please refer to our new `.github` Issue and Pull Request templates when submitting!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingRoom`)
+https://user-images.githubusercontent.com/26396804/193622132-c7e12305-3cbf-4c4c-8992-2f58104a5068.mp4
 
 
-## License
+# Get started!
 
-The code in this repository is licensed under the [MIT License](LICENSE). 
-**Note:** All personal assets, 3D textures, images, and copywriting are copyright of Tomasz Szmajda and may not be reused or reproduced without explicit permission.
-3. Commit your Changes (`git commit -m 'feat: Added realistic liquid simulation to Contact Room'`)
-4. Push to the Branch (`git push origin feature/AmazingRoom`)
-5. Open a Pull Request
+## First
 
----
+Start by `forking` this repository, then clone your forked copy and navigate to the root directory.
 
-*Designed and Developed by [Tomasz Szmajda (ITom Dev)](https://itomdev.com).*
+## Install the dependencies with: 
+
+### `yarn`
+
+## Then start the development server with:
+
+### `yarn start`
+
+This runs the app in the development mode.
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+The page will reload when you make changes.
+You may also see any lint errors in the console.
+
+## Modify the template to your taste.
+
+There is no coding required to configure the pages of the portfolio. 
+All the settings that you will ever need to touch are set inside the 
+
+`src/configs.js`, `./constants/pageData.js`, and `src/theme.js`
+
+## Video tutorial:
+
+https://youtu.be/fC7e2ONfhUc
+
+## Deploy to github pages
+
+First make sure to create a `gh-pages` branch.
+
+After pushing the branch to GitHub, head over to the `Settings` page of the repository and select in the `GitHub Pages` section the `gh-pages` branch as source.
+
+After that run:
+
+### `yarn deploy`
+
+And thats It! It will automatically deploy to `https://{username}.github.io/{repo-name}`
+
+# More info
+
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/tomasgonzalez)
+
